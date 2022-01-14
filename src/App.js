@@ -1,22 +1,27 @@
-import './App.css';
+import './css/main.css';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import img01 from './img/img01.jpg';
+import img02 from './img/img02.jpg';
+
 
 function App() {
+  let divStyle = {
+    width: 300,
+    height: 300,
+    backgroundImage: `url(${img02})`,
+    backgroundSize: 'cover'
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <figure>
+      <Header />
+        <img src={img01} alt="" />
+        <div style={divStyle}></div>
+
+        <img src={process.env.PUBLIC_URL + 'img/img03.jpg'} alt="" />
+        <img src={process.env.PUBLIC_URL + 'img/img04.jpg'} alt="" />
+      <Footer />
+    </figure>
   );
 }
 
